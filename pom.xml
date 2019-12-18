@@ -6,6 +6,7 @@
     <modules>
         <module>itrip-beans</module>
         <module>itrip-utils</module>
+        <module>itrip-dao</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -61,6 +62,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <!--mybatis-spring-boot-starter-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <!--mysql-driver 驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--连接池-->
+
+
+
 
 
         <dependency>
