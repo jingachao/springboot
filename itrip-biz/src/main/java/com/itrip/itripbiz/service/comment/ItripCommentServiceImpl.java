@@ -1,5 +1,4 @@
 package com.itrip.itripbiz.service.comment;
-import cn.itrip.beans.pojo.ItripHotelOrder;
 import cn.itrip.beans.pojo.ItripImage;
 import cn.itrip.beans.vo.comment.ItripScoreCommentVO;
 import cn.itrip.beans.vo.comment.ItripListCommentVO;
@@ -10,7 +9,7 @@ import cn.itrip.common.EmptyUtils;
 import cn.itrip.common.Page;
 import cn.itrip.dao.hotelorder.ItripHotelOrderMapper;
 import cn.itrip.dao.image.ItripImageMapper;
-import org.apache.log4j.Logger;
+import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -18,9 +17,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import cn.itrip.common.Constants;
+@CommonsLog
 @Service
 public class ItripCommentServiceImpl implements ItripCommentService {
-    private Logger logger = Logger.getLogger(ItripCommentServiceImpl.class);
     @Resource
     private ItripCommentMapper itripCommentMapper;
     @Resource
@@ -59,7 +58,7 @@ public class ItripCommentServiceImpl implements ItripCommentService {
             Long commentId = 0L;
             if(itripCommentMapper.insertItripComment(obj) > 0 ){
                 commentId = obj.getId();
-                logger.debug("新增评论id：================ " + commentId);
+                log.debug("新增评论id：================ " + commentId);
                 if(null != itripImages && itripImages.size() > 0 && commentId > 0){
                     for (ItripImage itripImage:itripImages) {
                         itripImage.setTargetId(commentId);
