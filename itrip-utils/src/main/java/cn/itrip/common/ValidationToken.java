@@ -2,6 +2,7 @@ package cn.itrip.common;
 
 import cn.itrip.beans.pojo.ItripUser;
 import com.alibaba.fastjson.JSONObject;
+import lombok.Data;
 import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @CommonsLog
 @Component
+@Data
 public class ValidationToken {
     @Autowired
     private StringRedisTemplate redisAPI;
