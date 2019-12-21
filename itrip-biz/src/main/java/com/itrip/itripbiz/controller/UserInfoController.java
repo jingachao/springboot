@@ -101,7 +101,9 @@ public class UserInfoController {
     public Dto<Object> addUserLinkUser(@RequestBody ItripAddUserLinkUserVO itripAddUserLinkUserVO, HttpServletRequest request){
         String tokenString  = request.getHeader("token");
         log.debug("token name is from header : " + tokenString);
-        ItripUser currentUser = validationToken.getCurrentUser(tokenString);
+        //ItripUser currentUser = validationToken.getCurrentUser(tokenString);   //先不判断token
+        ItripUser currentUser = new ItripUser();
+        currentUser.setId(29L);
         if(null != currentUser && null != itripAddUserLinkUserVO){
             ItripUserLinkUser itripUserLinkUser = new ItripUserLinkUser();
             itripUserLinkUser.setLinkUserName(itripAddUserLinkUserVO.getLinkUserName());
