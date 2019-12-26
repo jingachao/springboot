@@ -74,7 +74,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!--连接池-->
-
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 
 
 

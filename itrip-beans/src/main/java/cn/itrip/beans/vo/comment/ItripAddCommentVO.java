@@ -3,11 +3,13 @@ package cn.itrip.beans.vo.comment;
 import cn.itrip.beans.pojo.ItripImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * 页面输入-新增评论VO
  * Created by hanlu on 2017/5/7.
  */
+@Data
 @ApiModel(value = "ItripAddCommentVO",description = "添加用户评论VO")
 public class ItripAddCommentVO {
 
@@ -39,7 +41,7 @@ public class ItripAddCommentVO {
     private ItripImage[] itripImages;
 
 
-    public Long getOrderId() {
+   /* public Long getOrderId() {
     return orderId;
     }
 
@@ -140,5 +142,5 @@ public class ItripAddCommentVO {
 
     public void setContent(String content) {
         this.content = content;
-    }
+    }*/
 }
